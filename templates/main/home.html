@@ -1,12 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-</head>
-<body>
-    {{data}}
-</body>
-</html>
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %} 
+
+    <div class="grid-item"> 
+        <div class="maincontainer">
+            <div class="back">
+                <h2>Write Blog Post</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga molestiae nostrum architecto eaque cum nemo quidem nesciunt reiciendis ipsum debitis, deleniti rerum quos unde numquam non pariatur maiores sapiente dolore?</p>
+            </div>
+
+            <div class="front">
+                <div class="image">
+                    <img src="{% static 'images/write_blog_post.jpg' %}" width="302" height="299">
+                    <h2>Write Blog Post</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-item"> 
+        <div class="maincontainer">
+            <div class="back">
+                <h2>Turn Text into Code</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae nulla deleniti, facere laudantium amet, numquam impedit similique enim mollitia harum delectus obcaecati tempore voluptatum quas aspernatur aperiam necessitatibus doloremque.</p>
+                <button type="button">Try It</button>
+            </div>
+
+            <div class="front">
+                <div class="image">
+                    <img src="{% static 'images/turn_text.jpg' %}" width="302" height="299">
+                    <h2>Text to Code</h2>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="grid-item"> 
+        <div class="maincontainer">
+            <div class="back">
+                <h2>Explain Code</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quisquam aliquam asperiores corrupti molestiae nostrum dolor, eaque, eos assumenda facilis fugit odio dolorem quis minima omnis. Pariatur soluta officia illo!</p>
+            </div>
+            <div class="front">
+                <div class="image">
+                    <img src="{% static 'images/explain_code.jpg' %}" width="302" height="299">
+                    <h2>Explain Code</h2>
+                </div>
+            </div>
+
+        </div> 
+    </div>
+
+    <div class="grid-item"> 
+        <div class="maincontainer">
+            <div class="back">
+                <h2>Translate</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod atque, molestias pariatur facilis natus dolorum repellendus accusantium itaque aliquid id saepe, consequatur iste doloremque! Perspiciatis architecto hic deleniti eveniet sequi!</p>
+            </div>
+            <div class="front">
+                <div class="image">
+                    <img src="{% static 'images/translate.jpg' %}" width="302" height="299">
+                    <h2>Translate</h2>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+{% endblock %}
