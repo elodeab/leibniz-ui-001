@@ -65,7 +65,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'openai_ui', 
         'USER': 'postgres', 
-        'PASSWORD': '*****',
+        'PASSWORD': '******',
         'HOST': '127.0.0.1', 
         'PORT': '5432',
     }
