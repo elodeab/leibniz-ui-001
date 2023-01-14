@@ -1,14 +1,22 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load socialaccount %}
 
-{% block title %}Homepage{% endblock %}
+{% block title %}Leibniz{% endblock %}
 
 {% block content %} 
 
     <div class="container" id="landing_page">
-        <h1>Lorem Ipsum</h1>
+        <h1>Leibniz-UI-001</h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui sunt incidunt consectetur a quidem quisquam laboriosam atque provident doloremque, nesciunt aliquam harum assumenda officia placeat iste ut? Libero, accusamus! Voluptate.</p>
         <a href="https://openai.com/">Learn more</a>
+
+        {% if user.is_authenticated %}
+        <a href="#">View Profile</a>
+        {% else %}
+        <a href="{% provider_login_url 'google' %}">Login with Google</a>
+        <a href="{% provider_login_url 'github' %}">Login with Github</a>
+        {% endif %}
     </div>
 
     <div class="blank"></div>
