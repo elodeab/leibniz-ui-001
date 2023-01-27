@@ -1,60 +1,63 @@
 {% extends 'main/base.html' %}
 {% load static %}
-{% load socialaccount %}
 
 {% block title %}Leibniz{% endblock %}
 
 {% block content %} 
 
     <div class="container" id="landing_page">
-        <h1>Leibniz-UI-001</h1>
+
+        <h1>Leibniz</h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui sunt incidunt consectetur a quidem quisquam laboriosam atque provident doloremque, nesciunt aliquam harum assumenda officia placeat iste ut? Libero, accusamus! Voluptate.</p>
         <a href="https://openai.com/">Learn more</a>
 
         {% if user.is_authenticated %}
-        <a href="#">View Profile</a>
-        <a href="{% url 'logout' %}">Log Out</a>
+            <a href="#">View Profile</a>
+            <a href="{% url 'logout' %}">Log Out</a>
 
         {% else %}
-        <a href="{% url 'login' %}">Login with Email</a>
-        <a href="{% provider_login_url 'google' %}">Login with Google</a>
-        <a href="{% provider_login_url 'github' %}">Login with Github</a>
+            <a href="{% url 'login' %}">Login</a>
+
         {% endif %}
+
     </div>
 
-    <div class="blank"></div>
-    
-    <div class="container second" id="cards">
+    {% if user.is_authenticated %}
 
-        <div class="item">
-            <div class="img img-first"></div>
-            <div class="card">
-                <h3>Write Blog Post</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia laudantium ex pariatur facere cumque, excepturi enim vitae laborum temporibus reprehenderit ea eius veniam dignissimos fugit quia libero quos, commodi quaerat!</p>
-                <a href="{% url 'write_blog_post' %}">Try It</a>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="img img-second"></div>
-            <div class="card">
-                <h3>Text to Code</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum cumque quas blanditiis a pariatur officiis perspiciatis repellendus facilis, consequuntur quidem architecto consectetur maiores nemo ipsa necessitatibus libero modi corporis iusto?</p>
-                <a href="{% url 'text_to_code' %}">Try It</a>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="img img-third"></div>
-            <div class="card">
-                <h3>Explain Code</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit veritatis quos vitae consequuntur eveniet fuga quidem hic eaque rerum asperiores saepe, adipisci consequatur fugiat, maiores error officia provident beatae modi?</p>
-                <a href="{% url 'explain_code' %}">Try It</a>
-            </div>
-        </div>
+        <div class="blank"></div>
         
-    </div>
+        <div class="container second" id="cards">
 
+            <div class="item">
+                <div class="img img-first"></div>
+                <div class="card">
+                    <h3>Write Blog Post</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia laudantium ex pariatur facere cumque, excepturi enim vitae laborum temporibus reprehenderit ea eius veniam dignissimos fugit quia libero quos, commodi quaerat!</p>
+                    <a href="{% url 'write_blog_post' %}">Try It</a>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="img img-second"></div>
+                <div class="card">
+                    <h3>Text to Code</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum cumque quas blanditiis a pariatur officiis perspiciatis repellendus facilis, consequuntur quidem architecto consectetur maiores nemo ipsa necessitatibus libero modi corporis iusto?</p>
+                    <a href="{% url 'text_to_code' %}">Try It</a>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="img img-third"></div>
+                <div class="card">
+                    <h3>Explain Code</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit veritatis quos vitae consequuntur eveniet fuga quidem hic eaque rerum asperiores saepe, adipisci consequatur fugiat, maiores error officia provident beatae modi?</p>
+                    <a href="{% url 'explain_code' %}">Try It</a>
+                </div>
+            </div>
+            
+        </div>
+
+        {% endif %}
     <div class="blank"></div>
 
     <div class="footer"></div>

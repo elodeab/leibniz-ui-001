@@ -10,9 +10,12 @@ def home(request):
 def user_login(request):
     
     if request.method == "POST":
+        
         username = request.POST['username']
         password = request.POST['password']
+        
         user = authenticate(request, username=username, password=password)
+        
         if user is not None:
             login(request, user)
             # Redirect to a success page.
@@ -22,8 +25,7 @@ def user_login(request):
             return render(request,"")
         
     else:
-        return render()
-            
+        return render()           
 
 def write_blog_post(request):
     
